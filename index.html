@@ -12,10 +12,22 @@
     <div>
         <ul class="messageList"></ul>
         <input class="messageInput">
-        <button onclick='send()'>Send</button>
+        <button class="btnSend" onclick="send()">Send</button>
     </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="./script.js"></script>
+    <script>
+        const socket = io();
+        const send = () => {
+            const text = document.querySelector(".messageInput").value;
+            socket.emit('chat message', text);
+        };
+        const receive = (msg) => {
+            const li = document.createElement('li');
+            li.innerText = msg;
+            document.querySelector('.messageList').appendChild(li)
+        }
+        socket.on('chat message', receive)
+    </script>
 </body>
 
 </html>
