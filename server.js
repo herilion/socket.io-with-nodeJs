@@ -13,7 +13,8 @@ io.on('connection', function (socket) {
         console.log('un utilisateur vient de se deconnecter')
     })
     socket.on('chat message', function (msg) {
-        console.log('message reçu' + msg);
+        console.log('message reçu : ' + msg);
+        io.emit('chat message', msg)
     })
 })
 //
