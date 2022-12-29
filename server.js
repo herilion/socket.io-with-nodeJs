@@ -9,6 +9,12 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
     console.log('un utilisateur est connecté')
+    socket.on('disconnect', function () {
+        console.log('un utilisateur vient de se deconnecter')
+    })
+    socket.on('chat message', function (msg) {
+        console.log('message reçu' + msg);
+    })
 })
 http.listen(8000, function () {
     console.log('server tourne au port 8000');
