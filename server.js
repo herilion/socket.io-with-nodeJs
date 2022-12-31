@@ -21,7 +21,7 @@ io.on('connection', function (socket) {
     })
 })
 
-//
+//lancement du serveur
 http.listen(8000, function () {
     console.log('server tourne au port 8000');
 })
