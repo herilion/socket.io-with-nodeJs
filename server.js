@@ -7,7 +7,7 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
 
-//
+//Ouverture de la connectioon socket.io
 io.on('connection', function (socket) {
     console.log('un utilisateur est connecté')
     socket.on('disconnect', function () {
