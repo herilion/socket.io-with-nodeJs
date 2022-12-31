@@ -10,6 +10,7 @@ app.get('/', function (req, res) {
 //Ouverture de la connectioon socket.io
 io.on('connection', function (socket) {
     console.log('un utilisateur est connecté')
+    //socket.io qui gère si l'utilisateur est connecté
     socket.on('disconnect', function () {
         console.log('un utilisateur vient de se deconnecter')
     })
