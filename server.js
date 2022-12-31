@@ -14,6 +14,7 @@ io.on('connection', function (socket) {
     socket.on('disconnect', function () {
         console.log('un utilisateur vient de se deconnecter')
     })
+    //socket qui gère l'envoi et reception de l'information du client
     socket.on('chat message', function (msg) {
         console.log('message reçu : ' + msg);
         io.emit('chat message', msg)
