@@ -20,6 +20,7 @@ io.on('connection', function (socket) {
         io.emit('chat message', msg)
     })
 })
+
 //
 http.listen(8000, function () {
     console.log('server tourne au port 8000');
