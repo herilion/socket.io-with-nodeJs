@@ -6,6 +6,7 @@ const io = require('socket.io')(http);
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html')
 })
+
 //
 io.on('connection', function (socket) {
     console.log('un utilisateur est connecté')
